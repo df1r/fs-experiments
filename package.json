@@ -1,0 +1,20 @@
+{
+  "name": "file-system-experiments",
+  "version": "1.0.0",
+  "description": "Testing how file access works in railway/github",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "df1r"
+  },
+  "author": "Daniel Fishman",
+  "license": "MIT",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.1.0"
+  }
+}

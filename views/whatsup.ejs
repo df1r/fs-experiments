@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What's up?</title>
+    <link rel="stylesheet" href="whatsup.css">
+</head>
+<body>
+    <h1>Tell us what's on your mind</h1>
+    <form action="/whatsup" method="POST">
+        <label for="textInput">Type your random thoughts here.</label>
+        <br />
+        <br />
+        <input type="text" id="textInput" size="80" autofocus name="newIdea" autocomplete="off" 
+                    placeholder="People who don't like bacon are wrong.">
+        <br />
+        <br />
+        <button type="submit">Submit</button>
+    </form>
+    <br />
+    <br />
+    <form action="/summary" method="POST">
+        <button type="submit">Show all of the ideas</button>
+    </form>
+</body>
+</html>
