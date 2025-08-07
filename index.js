@@ -14,8 +14,6 @@ app.listen(port, ()=>{
     console.log(`scoring server running on port ${port}`);
 });
 
-var fullFile = "";
-
 function writeMessage(message) {
     fs.appendFile (ideaFile, message + "\n", (err) => { 
         if (err) { throw (err) }
@@ -44,7 +42,17 @@ app.post("/whatsup", (req, res) => {
 });
 
 app.post("/summary", (req, res) => { 
-    readMessage(function summaryProcess(fullFile) { 
-        res.render("summary.ejs", { fullFile: fullFile });
-    });
+    if (req.body.reqType == "displayMessage") {
+        readMessage((fullFile) => {
+            res.render("summary.ejs", { fullFile: fullFile });
+        });
+    } else {
+        res.download("./public/ideas.txt", "ideas.txt", (err) => {
+            if (err) {
+                throw (err);
+            } else {
+                console.log("The file was sent to the client for download.")
+            }
+        });
+    }
 });
